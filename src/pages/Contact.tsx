@@ -30,12 +30,11 @@ export default function Contact() {
     <div className="flex flex-col bg-gray-50">
       {/* Page Header */}
       <section className="bg-brand-dark py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img 
-            src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80&w=2070" 
-            alt="Background" 
+        <div className="absolute inset-0 opacity-40">
+          <img
+            src="/contact-hero.jpg"
+            alt="Background"
             className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
           />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
@@ -49,12 +48,12 @@ export default function Contact() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            
+
             {/* Contact Information */}
             <div>
               <h2 className="text-sm font-bold text-accent-green uppercase tracking-widest mb-2">Get in Touch</h2>
               <h3 className="text-4xl font-heading font-black text-gray-900 tracking-tight mb-8">We're Here to Help</h3>
-              
+
               <p className="text-lg text-gray-600 mb-12 leading-relaxed">
                 Whether you have a question about our restoration systems or need an immediate estimate for your commercial property, our team is ready to assist you.
               </p>
@@ -86,7 +85,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900 uppercase tracking-wide mb-1">Service Area</h4>
-                    <p className="text-xl text-gray-600">Purdy, MO<br/>Springfield, MO (60-mile radius)</p>
+                    <p className="text-xl text-gray-600">Purdy, MO<br />Springfield, MO (60-mile radius)</p>
                   </div>
                 </div>
 
@@ -96,7 +95,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900 uppercase tracking-wide mb-1">Business Hours</h4>
-                    <p className="text-xl text-gray-600">Mon - Fri: 8:00 AM - 5:00 PM<br/>Sat - Sun: Closed</p>
+                    <p className="text-xl text-gray-600">Mon - Fri: 8:00 AM - 5:00 PM<br />Sat - Sun: Closed</p>
                   </div>
                 </div>
               </div>
@@ -105,12 +104,12 @@ export default function Contact() {
             {/* Contact Form */}
             <div className="bg-white p-10 rounded-2xl shadow-xl border border-gray-100">
               <h3 className="text-2xl font-heading font-black text-gray-900 mb-6 uppercase tracking-wide">Request a Free Estimate</h3>
-              
+
               {isSubmitted ? (
                 <div className="bg-green-50 border border-green-200 text-green-800 p-6 rounded-lg text-center">
                   <h4 className="font-bold text-xl mb-2">Thank You!</h4>
                   <p>Your message has been received. We will contact you shortly to schedule your consultation.</p>
-                  <button 
+                  <button
                     onClick={() => setIsSubmitted(false)}
                     className="mt-6 text-brand-dark font-bold hover:underline"
                   >
@@ -132,7 +131,7 @@ export default function Contact() {
                       placeholder="John Doe"
                     />
                   </div>
-                  
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="email" className="block text-sm font-bold text-gray-700 uppercase tracking-wide mb-2">Email Address *</label>
@@ -198,17 +197,17 @@ export default function Contact() {
       {/* Map Section */}
       <section className="h-[500px] w-full bg-gray-200 relative">
         {/* Placeholder for Google Map - using an iframe with a general map of Springfield MO area */}
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d406086.3268481358!2d-93.59363026367187!3d37.18919649999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87cf62f745c8983f%3A0x6bfd6cb31e690da0!2sSpringfield%2C%20MO!5e0!3m2!1sen!2sus!4v1709664000000!5m2!1sen!2sus" 
-          width="100%" 
-          height="100%" 
-          style={{ border: 0 }} 
-          allowFullScreen 
-          loading="lazy" 
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d406086.3268481358!2d-93.59363026367187!3d37.18919649999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87cf62f745c8983f%3A0x6bfd6cb31e690da0!2sSpringfield%2C%20MO!5e0!3m2!1sen!2sus!4v1709664000000!5m2!1sen!2sus"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
           title="Service Area Map"
         ></iframe>
-        
+
         {/* Map Overlay Info */}
         <div className="absolute top-8 left-1/2 transform -translate-x-1/2 md:left-8 md:translate-x-0 bg-white p-6 rounded-xl shadow-2xl border border-gray-100 max-w-sm w-[calc(100%-2rem)]">
           <h4 className="font-heading font-black text-xl text-gray-900 mb-2 uppercase tracking-wide">Service Area</h4>

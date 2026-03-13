@@ -64,7 +64,7 @@ export default function MetalRoofRestoration() {
           <div className="relative">
             <div className="absolute inset-0 bg-accent-green/20 transform translate-x-4 translate-y-4 rounded-xl"></div>
             <img
-              src="/BA2F9B1339D1F5041541015CC36761F7.jpg"
+              src="/Copy of DJI_0329.JPG"
               alt="Metal Roof Coating"
               className="relative z-10 rounded-xl shadow-2xl w-full object-cover h-[500px]"
             />

@@ -157,7 +157,7 @@ export default function Home() {
           >
             {[
               { title: 'Spray Polyurethane Foam (SPF)', desc: 'High R-value insulation, 100% waterproof, and seamless protection.', path: '/services/spray-polyurethane-foam', image: '/SPF_6.jpg' },
-              { title: 'Metal Roof Restoration', desc: 'Rust inhibition and leak prevention with acrylic coating.', path: '/services/metal-roof-restoration', image: '/A033D8E3046F3DE1396AD0F308DECAD3.jpg' },
+              { title: 'Metal Roof Restoration', desc: 'Rust inhibition and leak prevention with acrylic coating.', path: '/services/metal-roof-restoration', image: '/25D067629BAE5CF869E019CC4A2F1762.jpg' },
               { title: 'Fabric Reinforced System', desc: 'Rugged, seamless reinforcement for ultimate durability.', path: '/services/fabric-reinforced-system', image: '/7A4D2A06A4BF8AAA326CCB5FA6451695.jpg' },
               { title: 'Membrane Restoration', desc: 'Extends the life of TPO, PVC, or EPDM roofs affordably.', path: '/services/membrane-restoration', image: '/SinglePly_10.jpg' }
             ].map((service, idx) => (

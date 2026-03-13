@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Phone, Menu, X, MapPin, Mail, Facebook, ChevronDown } from 'lucide-react';
+import { Phone, Menu, X, MapPin, Mail, ChevronDown } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -45,8 +45,8 @@ function Layout({ children }: { children: React.ReactNode }) {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
-    { 
-      name: 'Services', 
+    {
+      name: 'Services',
       path: '/services',
       dropdown: [
         { name: 'Spray Polyurethane Foam', path: '/services/spray-polyurethane-foam' },
@@ -68,9 +68,6 @@ function Layout({ children }: { children: React.ReactNode }) {
             <a href="mailto:ervin@ozarkeliteroofing.com" className="flex items-center hover:text-accent-green transition-colors"><Mail className="w-4 h-4 mr-2" /> ervin@ozarkeliteroofing.com</a>
           </div>
           <div className="flex items-center space-x-4">
-            <a href="https://facebook.com/ozarkeliteroofing" target="_blank" rel="noopener noreferrer" className="hover:text-accent-green transition-colors">
-              <Facebook className="w-4 h-4" />
-            </a>
           </div>
         </div>
       </div>
@@ -79,9 +76,9 @@ function Layout({ children }: { children: React.ReactNode }) {
       <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-3' : 'bg-white py-5'}`}>
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <Link to="/" className="flex items-center">
-            <img 
-              src="/logo.png" 
-              alt="Ozark Elite Roofing" 
+            <img
+              src="/logo.png"
+              alt="Ozark Elite Roofing"
               className="h-12 md:h-16 w-auto object-contain"
             />
           </Link>
@@ -189,9 +186,9 @@ function Layout({ children }: { children: React.ReactNode }) {
       <footer className="relative text-white pt-20 pb-10 border-t-4 border-accent-green overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=2070" 
-            alt="Footer Background" 
+          <img
+            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=2070"
+            alt="Footer Background"
             className="w-full h-full object-cover opacity-20"
             referrerPolicy="no-referrer"
           />
@@ -199,13 +196,13 @@ function Layout({ children }: { children: React.ReactNode }) {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
-          
+
           {/* Brand & Mission (Span 4) */}
           <div className="lg:col-span-4">
             <div className="flex items-center mb-6">
-              <img 
-                src="/logo.png" 
-                alt="Ozark Elite Roofing" 
+              <img
+                src="/logo.png"
+                alt="Ozark Elite Roofing"
                 className="h-16 w-auto object-contain"
               />
             </div>
@@ -213,9 +210,6 @@ function Layout({ children }: { children: React.ReactNode }) {
               "Our Mission is to install the best roof restoration systems at honest prices. We also strive to provide top notch customer service from our first contact with you to the end of the warranty period and beyond."
             </p>
             <div className="flex items-center space-x-4">
-              <a href="https://facebook.com/ozarkeliteroofing" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-accent-green transition-colors">
-                <Facebook className="w-6 h-6" />
-              </a>
             </div>
           </div>
 
@@ -225,7 +219,7 @@ function Layout({ children }: { children: React.ReactNode }) {
             <ul className="space-y-4 text-gray-400 text-sm">
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 mr-3 text-accent-green shrink-0" />
-                <span>Purdy, Missouri<br/>Serving Springfield, MO (60-mile radius)</span>
+                <span>Purdy, Missouri<br />Serving Springfield, MO (60-mile radius)</span>
               </li>
               <li className="flex items-center">
                 <Phone className="w-5 h-5 mr-3 text-accent-green shrink-0" />
@@ -251,20 +245,20 @@ function Layout({ children }: { children: React.ReactNode }) {
               </div>
             ) : (
               <form onSubmit={handleFooterSubmit} className="space-y-3">
-                <input 
-                  type="text" 
-                  placeholder="Your Name" 
+                <input
+                  type="text"
+                  placeholder="Your Name"
                   required
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded text-white placeholder-gray-500 focus:outline-none focus:border-accent-green transition-colors text-sm" 
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded text-white placeholder-gray-500 focus:outline-none focus:border-accent-green transition-colors text-sm"
                 />
-                <input 
-                  type="tel" 
-                  placeholder="Phone Number" 
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
                   required
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded text-white placeholder-gray-500 focus:outline-none focus:border-accent-green transition-colors text-sm" 
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded text-white placeholder-gray-500 focus:outline-none focus:border-accent-green transition-colors text-sm"
                 />
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   disabled={footerFormStatus === 'submitting'}
                   className={`w-full bg-accent-green hover:bg-[#86b025] text-brand-dark font-bold py-3 px-4 rounded transition-colors uppercase tracking-wide text-sm ${footerFormStatus === 'submitting' ? 'opacity-70 cursor-not-allowed' : ''}`}
                 >
