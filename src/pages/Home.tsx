@@ -12,9 +12,9 @@ const tileContainer = {
 
 const tileItem = {
   hidden: { opacity: 0, y: -40, rotateX: 20, transformOrigin: "top" },
-  show: { 
-    opacity: 1, 
-    y: 0, 
+  show: {
+    opacity: 1,
+    y: 0,
     rotateX: 0,
     transition: { type: "spring", stiffness: 200, damping: 20 }
   }
@@ -26,16 +26,15 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center bg-gray-900 overflow-hidden shadow-[inset_0_-20px_40px_rgba(0,0,0,0.5)]">
         <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=2070" 
-            alt="Commercial Roof Restoration" 
-            className="w-full h-full object-cover opacity-50"
-            referrerPolicy="no-referrer"
+          <img
+            src="/hero-bg.jpg"
+            alt="Commercial Roof Restoration"
+            className="w-full h-full object-cover opacity-60"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/80"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
         </div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -46,7 +45,7 @@ export default function Home() {
               Commercial Roofing Specialists
             </span>
             <h1 className="text-5xl md:text-7xl font-heading font-extrabold text-white mb-6 leading-tight tracking-tight">
-              Don't Replace It,<br/>
+              Don't Replace It,<br />
               <span className="text-accent-green">Restore It!</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
@@ -85,14 +84,14 @@ export default function Home() {
             <div className="w-24 h-1 bg-accent-green mx-auto mt-6"></div>
           </div>
 
-          <motion.div 
+          <motion.div
             variants={tileContainer}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-50px" }}
             className="grid grid-cols-1 md:grid-cols-3 gap-10"
           >
-            <motion.div 
+            <motion.div
               variants={tileItem}
               className="bg-white p-10 rounded-xl shadow-xl border-2 border-transparent hover:border-accent-green/50 relative overflow-hidden group transition-colors duration-300"
             >
@@ -104,7 +103,7 @@ export default function Home() {
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               variants={tileItem}
               className="bg-white p-10 rounded-xl shadow-xl border-2 border-transparent hover:border-accent-green/50 relative overflow-hidden group transition-colors duration-300"
             >
@@ -118,7 +117,7 @@ export default function Home() {
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               variants={tileItem}
               className="bg-white p-10 rounded-xl shadow-xl border-2 border-transparent hover:border-accent-green/50 relative overflow-hidden group transition-colors duration-300"
             >
@@ -149,7 +148,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <motion.div 
+          <motion.div
             variants={tileContainer}
             initial="hidden"
             whileInView="show"
@@ -165,8 +164,8 @@ export default function Home() {
               <motion.div variants={tileItem} key={idx} className="group cursor-pointer h-full">
                 <Link to={service.path} className="flex flex-col h-full">
                   <div className="h-48 bg-gray-200 rounded-t-xl overflow-hidden relative shrink-0">
-                    <img 
-                      src={`https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800&sig=${idx}`} 
+                    <img
+                      src={`https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800&sig=${idx}`}
                       alt={service.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       referrerPolicy="no-referrer"
@@ -184,7 +183,7 @@ export default function Home() {
               </motion.div>
             ))}
           </motion.div>
-          
+
           <div className="mt-10 text-center md:hidden">
             <Link to="/services" className="inline-flex items-center text-brand-dark font-bold hover:text-accent-green transition-colors uppercase tracking-wide">
               View All Systems <ArrowRight className="ml-2 w-5 h-5" />
@@ -198,7 +197,7 @@ export default function Home() {
         <div className="absolute inset-0 opacity-10">
           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
             <pattern id="grid" width="8" height="8" patternUnits="userSpaceOnUse">
-              <path d="M 8 0 L 0 0 0 8" fill="none" stroke="white" strokeWidth="0.5"/>
+              <path d="M 8 0 L 0 0 0 8" fill="none" stroke="white" strokeWidth="0.5" />
             </pattern>
             <rect width="100" height="100" fill="url(#grid)" />
           </svg>
