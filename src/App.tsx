@@ -78,14 +78,12 @@ function Layout({ children }: { children: React.ReactNode }) {
       {/* Sticky Header */}
       <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-3' : 'bg-white py-5'}`}>
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-brand-dark rounded flex items-center justify-center text-white font-heading font-bold text-xl">
-              OE
-            </div>
-            <div className="flex flex-col">
-              <span className="font-heading font-bold text-xl leading-tight text-brand-dark uppercase tracking-tight">Ozark Elite</span>
-              <span className="font-heading font-semibold text-sm leading-tight text-gray-600 uppercase tracking-widest">Roofing</span>
-            </div>
+          <Link to="/" className="flex items-center">
+            <img 
+              src="/logo.png" 
+              alt="Ozark Elite Roofing" 
+              className="h-12 md:h-16 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -204,14 +202,12 @@ function Layout({ children }: { children: React.ReactNode }) {
           
           {/* Brand & Mission (Span 4) */}
           <div className="lg:col-span-4">
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-accent-green rounded flex items-center justify-center text-brand-dark font-heading font-bold text-xl">
-                OE
-              </div>
-              <div className="flex flex-col">
-                <span className="font-heading font-bold text-xl leading-tight text-white uppercase tracking-tight">Ozark Elite</span>
-                <span className="font-heading font-semibold text-sm leading-tight text-gray-400 uppercase tracking-widest">Roofing</span>
-              </div>
+            <div className="flex items-center mb-6">
+              <img 
+                src="/logo.png" 
+                alt="Ozark Elite Roofing" 
+                className="h-16 w-auto object-contain"
+              />
             </div>
             <p className="text-gray-400 leading-relaxed mb-6 italic text-sm">
               "Our Mission is to install the best roof restoration systems at honest prices. We also strive to provide top notch customer service from our first contact with you to the end of the warranty period and beyond."
