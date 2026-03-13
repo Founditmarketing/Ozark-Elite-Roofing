@@ -156,19 +156,18 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           >
             {[
-              { title: 'Spray Polyurethane Foam (SPF)', desc: 'High R-value insulation, 100% waterproof, and seamless protection.', path: '/services/spray-polyurethane-foam' },
-              { title: 'Metal Roof Restoration', desc: 'Rust inhibition and leak prevention with acrylic coating.', path: '/services/metal-roof-restoration' },
-              { title: 'Fabric Reinforced System', desc: 'Rugged, seamless reinforcement for ultimate durability.', path: '/services/fabric-reinforced-system' },
-              { title: 'Membrane Restoration', desc: 'Extends the life of TPO, PVC, or EPDM roofs affordably.', path: '/services/membrane-restoration' }
+              { title: 'Spray Polyurethane Foam (SPF)', desc: 'High R-value insulation, 100% waterproof, and seamless protection.', path: '/services/spray-polyurethane-foam', image: '/SPF_6.jpg' },
+              { title: 'Metal Roof Restoration', desc: 'Rust inhibition and leak prevention with acrylic coating.', path: '/services/metal-roof-restoration', image: '/A033D8E3046F3DE1396AD0F308DECAD3.jpg' },
+              { title: 'Fabric Reinforced System', desc: 'Rugged, seamless reinforcement for ultimate durability.', path: '/services/fabric-reinforced-system', image: '/7A4D2A06A4BF8AAA326CCB5FA6451695.jpg' },
+              { title: 'Membrane Restoration', desc: 'Extends the life of TPO, PVC, or EPDM roofs affordably.', path: '/services/membrane-restoration', image: '/SinglePly_10.jpg' }
             ].map((service, idx) => (
               <motion.div variants={tileItem} key={idx} className="group cursor-pointer h-full">
                 <Link to={service.path} className="flex flex-col h-full">
                   <div className="h-48 bg-gray-200 rounded-t-xl overflow-hidden relative shrink-0">
                     <img
-                      src={`https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800&sig=${idx}`}
+                      src={service.image}
                       alt={service.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      referrerPolicy="no-referrer"
                     />
                     <div className="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition-colors duration-300"></div>
                   </div>

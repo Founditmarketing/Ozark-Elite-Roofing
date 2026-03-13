@@ -12,9 +12,9 @@ const tileContainer = {
 
 const tileItem = {
   hidden: { opacity: 0, y: -40, rotateX: 20, transformOrigin: "top" },
-  show: { 
-    opacity: 1, 
-    y: 0, 
+  show: {
+    opacity: 1,
+    y: 0,
     rotateX: 0,
     transition: { type: "spring", stiffness: 200, damping: 20 }
   }
@@ -32,7 +32,7 @@ export default function Services() {
         'Self-flashing around penetrations',
         'Lightweight and adds structural strength'
       ],
-      image: 'https://images.unsplash.com/photo-1541888087525-071470743b06?auto=format&fit=crop&q=80&w=1000'
+      image: '/SPF_10.jpg'
     },
     {
       id: 'metal',
@@ -45,7 +45,7 @@ export default function Services() {
         'Extends the life of the existing metal roof',
         'Reflective finish lowers cooling costs'
       ],
-      image: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80&w=1000'
+      image: '/DSC01403_0575.jpg'
     },
     {
       id: 'fabric',
@@ -58,7 +58,7 @@ export default function Services() {
         'Expands and contracts with the roof',
         'Cost-effective alternative to replacement'
       ],
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1000'
+      image: '/A033D8E3046F3DE1396AD0F308DECAD3.jpg'
     },
     {
       id: 'membrane',
@@ -70,7 +70,7 @@ export default function Services() {
         'Stops leaks and seals seams',
         'Highly reflective surface reduces energy consumption'
       ],
-      image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=1000'
+      image: '/SinglePly_6.jpg'
     },
     {
       id: 'replacement',
@@ -82,7 +82,7 @@ export default function Services() {
         'Long-term warranty protection',
         'Improved building aesthetics and value'
       ],
-      image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=1000'
+      image: '/DJI_0036 (1).jpg'
     }
   ];
 
@@ -91,11 +91,10 @@ export default function Services() {
       {/* Page Header */}
       <section className="bg-brand-dark py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <img 
-            src="https://images.unsplash.com/photo-1621841369796-03f191549419?auto=format&fit=crop&q=80&w=2070" 
-            alt="Background" 
+          <img
+            src="/Copy of DJI_0155.jpg"
+            alt="Background"
             className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
           />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
@@ -111,7 +110,7 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="space-y-24">
             {services.map((service, index) => (
-              <motion.div 
+              <motion.div
                 key={service.id}
                 initial={{ opacity: 0, y: -40, rotateX: 20, transformOrigin: "top" }}
                 whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
@@ -121,16 +120,15 @@ export default function Services() {
               >
                 <div className="w-full lg:w-1/2">
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-video lg:aspect-square max-h-[500px]">
-                    <img 
-                      src={service.image} 
-                      alt={service.title} 
+                    <img
+                      src={service.image}
+                      alt={service.title}
                       className="w-full h-full object-cover"
-                      referrerPolicy="no-referrer"
                     />
                     <div className="absolute inset-0 border-4 border-white/20 rounded-2xl"></div>
                   </div>
                 </div>
-                
+
                 <div className="w-full lg:w-1/2">
                   <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-dark mb-6 uppercase tracking-wide">
                     {service.title}
@@ -138,7 +136,7 @@ export default function Services() {
                   <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                     {service.description}
                   </p>
-                  
+
                   {service.process && (
                     <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm mb-8">
                       <h3 className="font-bold text-gray-900 uppercase tracking-wide mb-2 text-sm">The Process</h3>
@@ -159,7 +157,7 @@ export default function Services() {
                   </div>
 
                   <Link to="/contact" className="inline-flex items-center text-brand-dark font-bold hover:text-accent-green transition-colors uppercase tracking-wide text-lg group">
-                    Get an estimate for this system 
+                    Get an estimate for this system
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform" />
                   </Link>
                 </div>

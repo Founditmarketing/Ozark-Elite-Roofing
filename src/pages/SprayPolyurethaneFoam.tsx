@@ -9,15 +9,14 @@ export default function SprayPolyurethaneFoam() {
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center bg-brand-dark overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=2070" 
-            alt="Spray Polyurethane Foam" 
+          <img
+            src="/SPF_11.jpg"
+            alt="Spray Polyurethane Foam"
             className="w-full h-full object-cover opacity-30"
-            referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
         </div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -64,11 +63,10 @@ export default function SprayPolyurethaneFoam() {
           </div>
           <div className="relative">
             <div className="absolute inset-0 bg-accent-green/20 transform translate-x-4 translate-y-4 rounded-xl"></div>
-            <img 
-              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1000" 
-              alt="SPF Application" 
+            <img
+              src="/SPF_7.jpg"
+              alt="SPF Application"
               className="relative z-10 rounded-xl shadow-2xl w-full object-cover h-[500px]"
-              referrerPolicy="no-referrer"
             />
           </div>
         </div>

@@ -11,9 +11,9 @@ const tileContainer = {
 
 const tileItem = {
   hidden: { opacity: 0, y: -40, rotateX: 20, transformOrigin: "top" },
-  show: { 
-    opacity: 1, 
-    y: 0, 
+  show: {
+    opacity: 1,
+    y: 0,
     rotateX: 0,
     transition: { type: "spring", stiffness: 200, damping: 20 }
   }
@@ -43,11 +43,10 @@ export default function About() {
       {/* Page Header */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center bg-brand-dark overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1541888087525-071470743b06?auto=format&fit=crop&q=80&w=2070" 
-            alt="Background" 
+          <img
+            src="/Copy of DJI_0067.JPG"
+            alt="Background"
             className="w-full h-full object-cover opacity-30"
-            referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
         </div>
@@ -70,27 +69,26 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className="w-full lg:w-1/2">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 className="relative rounded-2xl overflow-hidden shadow-2xl"
               >
-                <img 
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1000" 
-                  alt="Our Team" 
+                <img
+                  src="/DJI_0006 (1).jpg"
+                  alt="Our Team"
                   className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 border-4 border-brand-dark/20 rounded-2xl"></div>
               </motion.div>
             </div>
-            
+
             <div className="w-full lg:w-1/2">
               <h2 className="text-sm font-bold text-accent-green uppercase tracking-widest mb-2">Our Story</h2>
               <h3 className="text-4xl md:text-5xl font-heading font-extrabold text-gray-900 tracking-tight mb-8">Built on Trust and Hard Work</h3>
-              
+
               <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
                 <p>
                   Ozark Elite Roofing was founded with a simple goal: to provide commercial property owners in Purdy, Springfield, and the surrounding areas with a smarter alternative to costly roof replacements.
@@ -116,7 +114,7 @@ export default function About() {
             <div className="w-24 h-1 bg-accent-green mx-auto mt-6"></div>
           </div>
 
-          <motion.div 
+          <motion.div
             variants={tileContainer}
             initial="hidden"
             whileInView="show"
@@ -124,7 +122,7 @@ export default function About() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {values.map((value, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 variants={tileItem}
                 className="bg-white p-10 rounded-xl shadow-lg border-2 border-transparent hover:border-accent-green/50 text-center group transition-colors duration-300"

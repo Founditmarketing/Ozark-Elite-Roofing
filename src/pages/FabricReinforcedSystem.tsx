@@ -9,15 +9,14 @@ export default function FabricReinforcedSystem() {
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center bg-brand-dark overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=2070" 
-            alt="Fabric Reinforced System" 
+          <img
+            src="/280C41C0688BE6D81C8C3A3C38D46C55.jpg"
+            alt="Fabric Reinforced System"
             className="w-full h-full object-cover opacity-30"
-            referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
         </div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -64,11 +63,10 @@ export default function FabricReinforcedSystem() {
           </div>
           <div className="relative">
             <div className="absolute inset-0 bg-accent-green/20 transform translate-x-4 translate-y-4 rounded-xl"></div>
-            <img 
-              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1000" 
-              alt="Fabric Reinforced Roofing" 
+            <img
+              src="/7A4D2A06A4BF8AAA326CCB5FA6451695.jpg"
+              alt="Fabric Reinforced Roofing"
               className="relative z-10 rounded-xl shadow-2xl w-full object-cover h-[500px]"
-              referrerPolicy="no-referrer"
             />
           </div>
         </div>
