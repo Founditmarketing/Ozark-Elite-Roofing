@@ -1,0 +1,36 @@
+{
+  "redirects": [
+    {
+      "source": "/services/spray-polyurethane-foam",
+      "destination": "/services/spray-polyurethane-foam-roofing-springfield-mo",
+      "permanent": true
+    },
+    {
+      "source": "/services/metal-roof-restoration",
+      "destination": "/services/metal-roof-restoration-springfield-mo",
+      "permanent": true
+    },
+    {
+      "source": "/services/fabric-reinforced-system",
+      "destination": "/services/commercial-roof-coating-springfield-mo",
+      "permanent": true
+    },
+    {
+      "source": "/services/membrane-restoration",
+      "destination": "/services/epdm-roof-restoration-springfield-mo",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/contact",
+      "destination": "/api/contact.js"
+    },
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
+}
