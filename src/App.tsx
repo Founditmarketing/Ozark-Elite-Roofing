@@ -50,10 +50,15 @@ function Layout({ children }: { children: React.ReactNode }) {
     setFooterFormError('');
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('https://www.founditos.com/api/contact-form/abde05cf-827f-4f7d-91fb-95e896b5c836', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(footerFormData),
+        body: JSON.stringify({
+          name: footerFormData.name,
+          email: footerFormData.email,
+          phone: footerFormData.phone,
+          message: 'Footer quick contact form',
+        }),
       });
 
       if (!res.ok) {

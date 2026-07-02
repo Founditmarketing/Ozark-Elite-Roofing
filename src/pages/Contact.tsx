@@ -18,10 +18,15 @@ export default function Contact() {
     setSubmitError('');
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('https://www.founditos.com/api/contact-form/abde05cf-827f-4f7d-91fb-95e896b5c836', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        }),
       });
 
       if (!res.ok) {
