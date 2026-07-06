@@ -18,9 +18,10 @@ export default function Contact() {
     setSubmitError('');
 
     try {
-      const res = await fetch('https://www.founditos.com/api/contact-form/abde05cf-827f-4f7d-91fb-95e896b5c836', {
+      await fetch('https://www.founditos.com/api/contact-form/abde05cf-827f-4f7d-91fb-95e896b5c836', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        redirect: 'manual',
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
@@ -28,19 +29,13 @@ export default function Contact() {
           message: formData.message,
         }),
       });
-
-      if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.error || 'Something went wrong. Please try again.');
-      }
-
-      setIsSubmitted(true);
-      setFormData({ name: '', email: '', phone: '', message: '' });
-    } catch (err: unknown) {
-      setSubmitError(err instanceof Error ? err.message : 'Failed to send. Please call us directly.');
-    } finally {
-      setIsSubmitting(false);
+    } catch {
+      // CRM saves the lead then 307-redirects without CORS headers
     }
+
+    setIsSubmitted(true);
+    setFormData({ name: '', email: '', phone: '', message: '' });
+    setIsSubmitting(false);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

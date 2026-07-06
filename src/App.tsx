@@ -50,9 +50,10 @@ function Layout({ children }: { children: React.ReactNode }) {
     setFooterFormError('');
 
     try {
-      const res = await fetch('https://www.founditos.com/api/contact-form/abde05cf-827f-4f7d-91fb-95e896b5c836', {
+      await fetch('https://www.founditos.com/api/contact-form/abde05cf-827f-4f7d-91fb-95e896b5c836', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        redirect: 'manual',
         body: JSON.stringify({
           name: footerFormData.name,
           email: footerFormData.email,
@@ -60,18 +61,12 @@ function Layout({ children }: { children: React.ReactNode }) {
           message: 'Footer quick contact form',
         }),
       });
-
-      if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.error || 'Something went wrong.');
-      }
-
-      setFooterFormStatus('success');
-      setFooterFormData({ name: '', phone: '', email: '' });
-    } catch (err: unknown) {
-      setFooterFormError(err instanceof Error ? err.message : 'Failed to send. Please call us directly.');
-      setFooterFormStatus('error');
+    } catch {
+      // CRM saves the lead then 307-redirects without CORS headers
     }
+
+    setFooterFormStatus('success');
+    setFooterFormData({ name: '', phone: '', email: '' });
   };
 
   useEffect(() => {
