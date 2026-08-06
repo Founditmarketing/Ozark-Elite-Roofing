@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 import React, { useState } from 'react';
+import PageSEO from '../components/PageSEO';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -44,6 +45,13 @@ export default function Contact() {
 
   return (
     <div className="flex flex-col bg-gray-50">
+      <PageSEO
+        title="Contact Ozark Elite Roofing | Free Roof Estimate Springfield, MO"
+        description="Request a free roof inspection and estimate from Ozark Elite Roofing. Call 417-444-3808 or send us a message — serving Purdy and Springfield, MO."
+        path="/contact"
+        image="/contact-hero.jpg"
+      />
+
       {/* Page Header */}
       <section className="bg-brand-dark py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-40">

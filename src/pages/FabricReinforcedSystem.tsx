@@ -1,54 +1,28 @@
 import { CheckCircle2, ArrowRight, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet-async';
+import PageSEO, { buildLocalBusinessSchema } from '../components/PageSEO';
 
-const DOMAIN = 'https://ozark-elite-roofing.vercel.app';
+const PATH = '/services/commercial-roof-coating-springfield-mo';
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "RoofingContractor"],
-  "name": "Ozark Elite Roofing",
-  "url": `${DOMAIN}/services/commercial-roof-coating-springfield-mo`,
-  "telephone": "+14174443808",
-  "email": "ervin@ozarkeliteroofing.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Purdy",
-    "addressRegion": "MO",
-    "postalCode": "65734",
-    "addressCountry": "US"
+const schema = buildLocalBusinessSchema({
+  path: PATH,
+  service: {
+    name: 'Commercial Roof Coating',
+    description: 'Fabric-reinforced commercial roof coating system for flat and low-slope roofs in Springfield, MO. Applied over existing roofing — no tear-off required.',
   },
-  "areaServed": {
-    "@type": "GeoCircle",
-    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 36.8167, "longitude": -93.9238 },
-    "geoRadius": "96560"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "itemListElement": [{
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Commercial Roof Coating",
-        "serviceType": "Commercial Roof Coating",
-        "description": "Fabric-reinforced commercial roof coating system for flat and low-slope roofs in Springfield, MO. Applied over existing roofing — no tear-off required.",
-        "areaServed": "Springfield, MO",
-        "provider": { "@type": "LocalBusiness", "name": "Ozark Elite Roofing" }
-      }
-    }]
-  }
-};
+});
 
 export default function FabricReinforcedSystem() {
   return (
     <div className="flex flex-col">
-      <Helmet>
-        <title>Commercial Roof Coating Springfield MO | Fabric Reinforced Systems | Ozark Elite Roofing</title>
-        <meta name="description" content="Ozark Elite Roofing applies fabric-reinforced commercial roof coatings to flat and low-slope roofs in Springfield, MO. No tear-off required. Free inspection." />
-        <link rel="canonical" href={`${DOMAIN}/services/commercial-roof-coating-springfield-mo`} />
-        <script type="application/ld+json">{JSON.stringify(schema)}</script>
-      </Helmet>
+      <PageSEO
+        title="Commercial Roof Coating Springfield MO | Fabric Reinforced Systems | Ozark Elite Roofing"
+        description="Ozark Elite Roofing applies fabric-reinforced commercial roof coatings to flat and low-slope roofs in Springfield, MO. No tear-off required. Free inspection."
+        path={PATH}
+        schema={schema}
+        image="/280C41C0688BE6D81C8C3A3C38D46C55.jpg"
+      />
 
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[440px] flex items-center justify-center bg-brand-dark overflow-hidden">

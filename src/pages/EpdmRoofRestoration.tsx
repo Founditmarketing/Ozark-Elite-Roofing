@@ -1,54 +1,28 @@
 import { CheckCircle2, ArrowRight, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet-async';
+import PageSEO, { buildLocalBusinessSchema } from '../components/PageSEO';
 
-const DOMAIN = 'https://ozark-elite-roofing.vercel.app';
+const PATH = '/services/epdm-roof-restoration-springfield-mo';
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "RoofingContractor"],
-  "name": "Ozark Elite Roofing",
-  "url": `${DOMAIN}/services/epdm-roof-restoration-springfield-mo`,
-  "telephone": "+14174443808",
-  "email": "ervin@ozarkeliteroofing.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Purdy",
-    "addressRegion": "MO",
-    "postalCode": "65734",
-    "addressCountry": "US"
+const schema = buildLocalBusinessSchema({
+  path: PATH,
+  service: {
+    name: 'EPDM Roof Restoration',
+    description: 'EPDM rubber roof restoration and coating for commercial buildings in Springfield, MO. Extends membrane life without full replacement.',
   },
-  "areaServed": {
-    "@type": "GeoCircle",
-    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 36.8167, "longitude": -93.9238 },
-    "geoRadius": "96560"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "itemListElement": [{
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "EPDM Roof Restoration",
-        "serviceType": "EPDM Roof Restoration",
-        "description": "EPDM rubber roof restoration and coating for commercial buildings in Springfield, MO. Extends membrane life without full replacement.",
-        "areaServed": "Springfield, MO",
-        "provider": { "@type": "LocalBusiness", "name": "Ozark Elite Roofing" }
-      }
-    }]
-  }
-};
+});
 
 export default function EpdmRoofRestoration() {
   return (
     <div className="flex flex-col">
-      <Helmet>
-        <title>EPDM Roof Restoration Springfield MO | Membrane Coating | Ozark Elite Roofing</title>
-        <meta name="description" content="Is your EPDM rubber roof shrinking, cracking, or leaking in Springfield, MO? Ozark Elite Roofing restores EPDM membranes at a fraction of replacement cost. Free estimate." />
-        <link rel="canonical" href={`${DOMAIN}/services/epdm-roof-restoration-springfield-mo`} />
-        <script type="application/ld+json">{JSON.stringify(schema)}</script>
-      </Helmet>
+      <PageSEO
+        title="EPDM Roof Restoration Springfield MO | Membrane Coating | Ozark Elite Roofing"
+        description="Is your EPDM rubber roof shrinking, cracking, or leaking in Springfield, MO? Ozark Elite Roofing restores EPDM membranes at a fraction of replacement cost. Free estimate."
+        path={PATH}
+        schema={schema}
+        image="/SinglePly_11.jpg"
+      />
 
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[440px] flex items-center justify-center bg-brand-dark overflow-hidden">

@@ -1,54 +1,28 @@
 import { CheckCircle2, ArrowRight, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet-async';
+import PageSEO, { buildLocalBusinessSchema } from '../components/PageSEO';
 
-const DOMAIN = 'https://ozark-elite-roofing.vercel.app';
+const PATH = '/services/metal-roof-restoration-springfield-mo';
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "RoofingContractor"],
-  "name": "Ozark Elite Roofing",
-  "url": `${DOMAIN}/services/metal-roof-restoration-springfield-mo`,
-  "telephone": "+14174443808",
-  "email": "ervin@ozarkeliteroofing.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Purdy",
-    "addressRegion": "MO",
-    "postalCode": "65734",
-    "addressCountry": "US"
+const schema = buildLocalBusinessSchema({
+  path: PATH,
+  service: {
+    name: 'Metal Roof Restoration',
+    description: 'Commercial metal roof restoration in Springfield, MO. Stops leaks at seams and fasteners, inhibits rust, and applies a reflective acrylic coating system.',
   },
-  "areaServed": {
-    "@type": "GeoCircle",
-    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 36.8167, "longitude": -93.9238 },
-    "geoRadius": "96560"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "itemListElement": [{
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Metal Roof Restoration",
-        "serviceType": "Metal Roof Restoration",
-        "description": "Commercial metal roof restoration in Springfield, MO. Stops leaks at seams and fasteners, inhibits rust, and applies a reflective acrylic coating system.",
-        "areaServed": "Springfield, MO",
-        "provider": { "@type": "LocalBusiness", "name": "Ozark Elite Roofing" }
-      }
-    }]
-  }
-};
+});
 
 export default function MetalRoofRestoration() {
   return (
     <div className="flex flex-col">
-      <Helmet>
-        <title>Metal Roof Restoration Springfield MO | Stop Leaks & Rust | Ozark Elite Roofing</title>
-        <meta name="description" content="Leaking metal roof in Springfield, MO? Ozark Elite Roofing stops leaks, inhibits rust, and restores your metal roof with a reflective coating — no replacement needed. Free estimate." />
-        <link rel="canonical" href={`${DOMAIN}/services/metal-roof-restoration-springfield-mo`} />
-        <script type="application/ld+json">{JSON.stringify(schema)}</script>
-      </Helmet>
+      <PageSEO
+        title="Metal Roof Restoration Springfield MO | Stop Leaks & Rust | Ozark Elite Roofing"
+        description="Leaking metal roof in Springfield, MO? Ozark Elite Roofing stops leaks, inhibits rust, and restores your metal roof with a reflective coating — no replacement needed. Free estimate."
+        path={PATH}
+        schema={schema}
+        image="/Benchmark Top Coat_1.JPG"
+      />
 
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[440px] flex items-center justify-center bg-brand-dark overflow-hidden">

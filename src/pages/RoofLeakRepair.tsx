@@ -1,54 +1,28 @@
 import { CheckCircle2, ArrowRight, Phone, AlertTriangle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet-async';
+import PageSEO, { buildLocalBusinessSchema } from '../components/PageSEO';
 
-const DOMAIN = 'https://ozark-elite-roofing.vercel.app';
+const PATH = '/services/roof-leak-repair-springfield-mo';
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "RoofingContractor"],
-  "name": "Ozark Elite Roofing",
-  "url": `${DOMAIN}/services/roof-leak-repair-springfield-mo`,
-  "telephone": "+14174443808",
-  "email": "ervin@ozarkeliteroofing.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Purdy",
-    "addressRegion": "MO",
-    "postalCode": "65734",
-    "addressCountry": "US"
+const schema = buildLocalBusinessSchema({
+  path: PATH,
+  service: {
+    name: 'Roof Leak Repair',
+    description: 'Commercial and residential roof leak diagnosis and repair in Springfield, MO. Fast response. Accurate source identification. Written estimate before work begins.',
   },
-  "areaServed": {
-    "@type": "GeoCircle",
-    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 36.8167, "longitude": -93.9238 },
-    "geoRadius": "96560"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "itemListElement": [{
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Roof Leak Repair",
-        "serviceType": "Roof Leak Repair",
-        "description": "Commercial and residential roof leak diagnosis and repair in Springfield, MO. Fast response. Accurate source identification. Written estimate before work begins.",
-        "areaServed": "Springfield, MO",
-        "provider": { "@type": "LocalBusiness", "name": "Ozark Elite Roofing" }
-      }
-    }]
-  }
-};
+});
 
 export default function RoofLeakRepair() {
   return (
     <div className="flex flex-col">
-      <Helmet>
-        <title>Roof Leak Repair Springfield MO | Commercial & Residential | Ozark Elite Roofing</title>
-        <meta name="description" content="Active roof leak in Springfield, MO? Ozark Elite Roofing diagnoses and repairs leaking commercial and residential roofs. Fast response. Written estimate. Call 417-444-3808." />
-        <link rel="canonical" href={`${DOMAIN}/services/roof-leak-repair-springfield-mo`} />
-        <script type="application/ld+json">{JSON.stringify(schema)}</script>
-      </Helmet>
+      <PageSEO
+        title="Roof Leak Repair Springfield MO | Commercial & Residential | Ozark Elite Roofing"
+        description="Active roof leak in Springfield, MO? Ozark Elite Roofing diagnoses and repairs leaking commercial and residential roofs. Fast response. Written estimate. Call 417-444-3808."
+        path={PATH}
+        schema={schema}
+        image="/Copy of DJI_0086.JPG"
+      />
 
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[440px] flex items-center justify-center bg-brand-dark overflow-hidden">

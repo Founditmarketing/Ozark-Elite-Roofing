@@ -2,10 +2,22 @@ import React from 'react';
 import { ShieldCheck, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import PageSEO from '../components/PageSEO';
 
 export default function MembraneRestoration() {
   return (
     <div className="flex flex-col">
+      {/* Legacy route: vercel.json 301-redirects /services/membrane-restoration to
+          the EPDM page at the edge, so this component only renders in contexts that
+          bypass that redirect (e.g. local preview). Canonical points to the live page. */}
+      <PageSEO
+        title="Membrane Restoration Springfield MO | Ozark Elite Roofing"
+        description="Extend the life of your TPO, PVC, or EPDM roof affordably. See our current EPDM roof restoration page for details and a free estimate."
+        path="/services/epdm-roof-restoration-springfield-mo"
+        noIndex
+        image="/SinglePly_11.jpg"
+      />
+
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center bg-brand-dark overflow-hidden">
         <div className="absolute inset-0">

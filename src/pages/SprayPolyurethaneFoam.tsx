@@ -1,54 +1,28 @@
 import { CheckCircle2, ArrowRight, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet-async';
+import PageSEO, { buildLocalBusinessSchema } from '../components/PageSEO';
 
-const DOMAIN = 'https://ozark-elite-roofing.vercel.app';
+const PATH = '/services/spray-polyurethane-foam-roofing-springfield-mo';
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "RoofingContractor"],
-  "name": "Ozark Elite Roofing",
-  "url": `${DOMAIN}/services/spray-polyurethane-foam-roofing-springfield-mo`,
-  "telephone": "+14174443808",
-  "email": "ervin@ozarkeliteroofing.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Purdy",
-    "addressRegion": "MO",
-    "postalCode": "65734",
-    "addressCountry": "US"
+const schema = buildLocalBusinessSchema({
+  path: PATH,
+  service: {
+    name: 'Spray Polyurethane Foam Roofing',
+    description: 'Seamless, 100% waterproof SPF roofing system installed on commercial buildings in Springfield, MO. Highest R-value per inch of any commercial roofing material.',
   },
-  "areaServed": {
-    "@type": "GeoCircle",
-    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 36.8167, "longitude": -93.9238 },
-    "geoRadius": "96560"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "itemListElement": [{
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Spray Polyurethane Foam Roofing",
-        "serviceType": "Spray Polyurethane Foam Roofing",
-        "description": "Seamless, 100% waterproof SPF roofing system installed on commercial buildings in Springfield, MO. Highest R-value per inch of any commercial roofing material.",
-        "areaServed": "Springfield, MO",
-        "provider": { "@type": "LocalBusiness", "name": "Ozark Elite Roofing" }
-      }
-    }]
-  }
-};
+});
 
 export default function SprayPolyurethaneFoam() {
   return (
     <div className="flex flex-col">
-      <Helmet>
-        <title>Spray Foam Roofing Springfield MO | Ozark Elite Roofing</title>
-        <meta name="description" content="Ozark Elite Roofing installs spray polyurethane foam (SPF) roofing on commercial buildings in Springfield, MO. 100% waterproof. Highest R-value. Free inspection." />
-        <link rel="canonical" href={`${DOMAIN}/services/spray-polyurethane-foam-roofing-springfield-mo`} />
-        <script type="application/ld+json">{JSON.stringify(schema)}</script>
-      </Helmet>
+      <PageSEO
+        title="Spray Foam Roofing Springfield MO | Ozark Elite Roofing"
+        description="Ozark Elite Roofing installs spray polyurethane foam (SPF) roofing on commercial buildings in Springfield, MO. 100% waterproof. Highest R-value. Free inspection."
+        path={PATH}
+        schema={schema}
+        image="/SPF_11.jpg"
+      />
 
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[440px] flex items-center justify-center bg-brand-dark overflow-hidden">

@@ -1,6 +1,17 @@
 import { CheckCircle2, ArrowRight, ShieldCheck, Droplets, Wrench, Phone, DollarSign, Clock, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import PageSEO, { buildLocalBusinessSchema } from '../components/PageSEO';
+
+const PATH = '/services/residential';
+
+const schema = buildLocalBusinessSchema({
+  path: PATH,
+  service: {
+    name: 'Residential Roof Restoration',
+    description: 'Metal roof restoration, spray polyurethane foam, and leak repair for homes in the Springfield, MO area — extending roof life at a fraction of replacement cost.',
+  },
+});
 
 const tileContainer = {
   hidden: { opacity: 0 },
@@ -110,6 +121,13 @@ const processSteps = [
 export default function ResidentialServices() {
   return (
     <div className="flex flex-col">
+      <PageSEO
+        title="Residential Roof Restoration Springfield, MO | Ozark Elite Roofing"
+        description="Ozark Elite Roofing brings commercial-grade metal roof restoration, spray foam, and leak repair to homes in the Springfield, MO area — for a fraction of replacement cost."
+        path={PATH}
+        schema={schema}
+        image="/res3.png"
+      />
 
       {/* ─── Hero ─── */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center bg-brand-dark overflow-hidden">

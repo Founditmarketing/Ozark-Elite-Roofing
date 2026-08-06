@@ -1,54 +1,28 @@
 import { CheckCircle2, ArrowRight, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet-async';
+import PageSEO, { buildLocalBusinessSchema } from '../components/PageSEO';
 
-const DOMAIN = 'https://ozark-elite-roofing.vercel.app';
+const PATH = '/services/tpo-roof-restoration-springfield-mo';
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "RoofingContractor"],
-  "name": "Ozark Elite Roofing",
-  "url": `${DOMAIN}/services/tpo-roof-restoration-springfield-mo`,
-  "telephone": "+14174443808",
-  "email": "ervin@ozarkeliteroofing.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Purdy",
-    "addressRegion": "MO",
-    "postalCode": "65734",
-    "addressCountry": "US"
+const schema = buildLocalBusinessSchema({
+  path: PATH,
+  service: {
+    name: 'TPO Roof Restoration',
+    description: 'TPO single-ply membrane restoration and coating for commercial properties in Springfield, MO. Seam repair and re-coating — no full replacement.',
   },
-  "areaServed": {
-    "@type": "GeoCircle",
-    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 36.8167, "longitude": -93.9238 },
-    "geoRadius": "96560"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "itemListElement": [{
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "TPO Roof Restoration",
-        "serviceType": "TPO Roof Restoration",
-        "description": "TPO single-ply membrane restoration and coating for commercial properties in Springfield, MO. Seam repair and re-coating — no full replacement.",
-        "areaServed": "Springfield, MO",
-        "provider": { "@type": "LocalBusiness", "name": "Ozark Elite Roofing" }
-      }
-    }]
-  }
-};
+});
 
 export default function TpoRoofRestoration() {
   return (
     <div className="flex flex-col">
-      <Helmet>
-        <title>TPO Roof Restoration Springfield MO | Coating & Repair | Ozark Elite Roofing</title>
-        <meta name="description" content="Aging TPO roof in Springfield, MO? Ozark Elite Roofing restores and recoats TPO single-ply membranes to stop leaks and extend service life. No replacement needed. Free inspection." />
-        <link rel="canonical" href={`${DOMAIN}/services/tpo-roof-restoration-springfield-mo`} />
-        <script type="application/ld+json">{JSON.stringify(schema)}</script>
-      </Helmet>
+      <PageSEO
+        title="TPO Roof Restoration Springfield MO | Coating & Repair | Ozark Elite Roofing"
+        description="Aging TPO roof in Springfield, MO? Ozark Elite Roofing restores and recoats TPO single-ply membranes to stop leaks and extend service life. No replacement needed. Free inspection."
+        path={PATH}
+        schema={schema}
+        image="/SinglePly_5.JPG"
+      />
 
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[440px] flex items-center justify-center bg-brand-dark overflow-hidden">

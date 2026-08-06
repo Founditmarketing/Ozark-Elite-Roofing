@@ -1,30 +1,11 @@
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet-async';
+import PageSEO, { buildLocalBusinessSchema } from '../components/PageSEO';
 
-const DOMAIN = 'https://ozark-elite-roofing.vercel.app';
+const PATH = '/services';
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "RoofingContractor"],
-  "name": "Ozark Elite Roofing",
-  "url": `${DOMAIN}/services`,
-  "telephone": "+14174443808",
-  "email": "ervin@ozarkeliteroofing.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Purdy",
-    "addressRegion": "MO",
-    "postalCode": "65734",
-    "addressCountry": "US"
-  },
-  "areaServed": {
-    "@type": "GeoCircle",
-    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 36.8167, "longitude": -93.9238 },
-    "geoRadius": "96560"
-  }
-};
+const schema = buildLocalBusinessSchema({ path: PATH });
 
 const commercialServices = [
   {
@@ -84,12 +65,13 @@ const tileItem = {
 export default function Services() {
   return (
     <div className="flex flex-col bg-gray-50">
-      <Helmet>
-        <title>Commercial Roofing Services Springfield MO | Ozark Elite Roofing</title>
-        <meta name="description" content="Commercial roofing services in Springfield, MO — spray foam, metal roof restoration, EPDM, TPO, roof coating, leak repair, and metal replacement. Free inspection." />
-        <link rel="canonical" href={`${DOMAIN}/services`} />
-        <script type="application/ld+json">{JSON.stringify(schema)}</script>
-      </Helmet>
+      <PageSEO
+        title="Commercial Roofing Services Springfield MO | Ozark Elite Roofing"
+        description="Commercial roofing services in Springfield, MO — spray foam, metal roof restoration, EPDM, TPO, roof coating, leak repair, and metal replacement. Free inspection."
+        path={PATH}
+        schema={schema}
+        image="/Copy of DJI_0155.jpg"
+      />
 
       {/* Page Header */}
       <section className="bg-brand-dark py-20 relative overflow-hidden">

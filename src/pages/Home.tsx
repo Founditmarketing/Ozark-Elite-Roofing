@@ -1,6 +1,33 @@
 import { Link } from 'react-router-dom';
 import { ShieldCheck, TrendingDown, Clock, ArrowRight, CheckCircle2, Phone, Home as HomeIcon } from 'lucide-react';
 import { motion } from 'motion/react';
+import PageSEO, { DOMAIN, SITE_NAME } from '../components/PageSEO';
+
+const PATH = '/';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': ['LocalBusiness', 'RoofingContractor', 'Organization'],
+  name: SITE_NAME,
+  url: DOMAIN,
+  logo: `${DOMAIN}/logo.png`,
+  image: `${DOMAIN}/hero-bg.jpg`,
+  telephone: '+14174443808',
+  email: 'ervin@ozarkeliteroofing.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Purdy',
+    addressRegion: 'MO',
+    postalCode: '65734',
+    addressCountry: 'US',
+  },
+  areaServed: {
+    '@type': 'GeoCircle',
+    geoMidpoint: { '@type': 'GeoCoordinates', latitude: 36.8167, longitude: -93.9238 },
+    geoRadius: '96560',
+  },
+  sameAs: ['https://www.facebook.com/profile.php?id=61578109254917'],
+};
 
 const tileContainer = {
   hidden: { opacity: 0 },
@@ -23,6 +50,14 @@ const tileItem = {
 export default function Home() {
   return (
     <div className="flex flex-col">
+      <PageSEO
+        title="Commercial Roof Restoration Springfield, MO | Ozark Elite Roofing"
+        description="Ozark Elite Roofing restores commercial and residential roofs in Purdy and Springfield, MO — spray foam, metal, EPDM, and TPO systems that save money over full replacement. Free estimate."
+        path={PATH}
+        schema={schema}
+        image="/hero-bg.jpg"
+      />
+
       {/* Hero Section */}
       <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center bg-gray-900 overflow-hidden shadow-[inset_0_-20px_40px_rgba(0,0,0,0.5)]">
         <div className="absolute inset-0">
@@ -156,10 +191,10 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           >
             {[
-              { title: 'Spray Polyurethane Foam (SPF)', desc: 'High R-value insulation, 100% waterproof, and seamless protection.', path: '/services/spray-polyurethane-foam', image: '/SPF_6.jpg' },
-              { title: 'Metal Roof Restoration', desc: 'Rust inhibition and leak prevention with acrylic coating.', path: '/services/metal-roof-restoration', image: '/25D067629BAE5CF869E019CC4A2F1762.jpg' },
-              { title: 'Fabric Reinforced System', desc: 'Rugged, seamless reinforcement for ultimate durability.', path: '/services/fabric-reinforced-system', image: '/7A4D2A06A4BF8AAA326CCB5FA6451695.jpg' },
-              { title: 'Membrane Restoration', desc: 'Extends the life of TPO, PVC, or EPDM roofs affordably.', path: '/services/membrane-restoration', image: '/SinglePly_10.jpg' }
+              { title: 'Spray Polyurethane Foam (SPF)', desc: 'High R-value insulation, 100% waterproof, and seamless protection.', path: '/services/spray-polyurethane-foam-roofing-springfield-mo', image: '/SPF_6.jpg' },
+              { title: 'Metal Roof Restoration', desc: 'Rust inhibition and leak prevention with acrylic coating.', path: '/services/metal-roof-restoration-springfield-mo', image: '/25D067629BAE5CF869E019CC4A2F1762.jpg' },
+              { title: 'Fabric Reinforced System', desc: 'Rugged, seamless reinforcement for ultimate durability.', path: '/services/commercial-roof-coating-springfield-mo', image: '/7A4D2A06A4BF8AAA326CCB5FA6451695.jpg' },
+              { title: 'Membrane Restoration', desc: 'Extends the life of TPO, PVC, or EPDM roofs affordably.', path: '/services/epdm-roof-restoration-springfield-mo', image: '/SinglePly_10.jpg' }
             ].map((service, idx) => (
               <motion.div variants={tileItem} key={idx} className="group cursor-pointer h-full">
                 <Link to={service.path} className="flex flex-col h-full">

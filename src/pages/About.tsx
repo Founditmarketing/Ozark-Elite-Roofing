@@ -1,5 +1,6 @@
 import { Shield, Award, DollarSign } from 'lucide-react';
 import { motion } from 'motion/react';
+import PageSEO from '../components/PageSEO';
 
 const tileContainer = {
   hidden: { opacity: 0 },
@@ -40,6 +41,13 @@ export default function About() {
 
   return (
     <div className="flex flex-col bg-white">
+      <PageSEO
+        title="About Ozark Elite Roofing | Springfield, MO Roof Restoration"
+        description="Ozark Elite Roofing is a Purdy, MO-based commercial roofing contractor serving Springfield and the surrounding 60-mile radius with honest pricing and top-notch service."
+        path="/about"
+        image="/Copy of DJI_0067.JPG"
+      />
+
       {/* Page Header */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center bg-brand-dark overflow-hidden">
         <div className="absolute inset-0">

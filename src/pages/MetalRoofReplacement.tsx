@@ -1,54 +1,28 @@
 import { CheckCircle2, ArrowRight, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet-async';
+import PageSEO, { buildLocalBusinessSchema } from '../components/PageSEO';
 
-const DOMAIN = 'https://ozark-elite-roofing.vercel.app';
+const PATH = '/services/metal-roof-replacement-springfield-mo';
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "RoofingContractor"],
-  "name": "Ozark Elite Roofing",
-  "url": `${DOMAIN}/services/metal-roof-replacement-springfield-mo`,
-  "telephone": "+14174443808",
-  "email": "ervin@ozarkeliteroofing.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Purdy",
-    "addressRegion": "MO",
-    "postalCode": "65734",
-    "addressCountry": "US"
+const schema = buildLocalBusinessSchema({
+  path: PATH,
+  service: {
+    name: 'Metal Roof Replacement',
+    description: 'Commercial metal roof replacement in Springfield, MO. Expert installation of standing seam and exposed-fastener metal roofing systems.',
   },
-  "areaServed": {
-    "@type": "GeoCircle",
-    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 36.8167, "longitude": -93.9238 },
-    "geoRadius": "96560"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "itemListElement": [{
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Metal Roof Replacement",
-        "serviceType": "Metal Roof Replacement",
-        "description": "Commercial metal roof replacement in Springfield, MO. Expert installation of standing seam and exposed-fastener metal roofing systems.",
-        "areaServed": "Springfield, MO",
-        "provider": { "@type": "LocalBusiness", "name": "Ozark Elite Roofing" }
-      }
-    }]
-  }
-};
+});
 
 export default function MetalRoofReplacement() {
   return (
     <div className="flex flex-col">
-      <Helmet>
-        <title>Metal Roof Replacement Springfield MO | Commercial | Ozark Elite Roofing</title>
-        <meta name="description" content="When restoration isn't enough, Ozark Elite Roofing provides commercial metal roof replacement in Springfield, MO. Expert installation. Long-term warranty. Free estimate." />
-        <link rel="canonical" href={`${DOMAIN}/services/metal-roof-replacement-springfield-mo`} />
-        <script type="application/ld+json">{JSON.stringify(schema)}</script>
-      </Helmet>
+      <PageSEO
+        title="Metal Roof Replacement Springfield MO | Commercial | Ozark Elite Roofing"
+        description="When restoration isn't enough, Ozark Elite Roofing provides commercial metal roof replacement in Springfield, MO. Expert installation. Long-term warranty. Free estimate."
+        path={PATH}
+        schema={schema}
+        image="/DJI_0036 (1).jpg"
+      />
 
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[440px] flex items-center justify-center bg-brand-dark overflow-hidden">
