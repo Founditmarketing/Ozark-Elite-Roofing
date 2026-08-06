@@ -1,6 +1,8 @@
 import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 import React, { useState } from 'react';
-import PageSEO from '../components/PageSEO';
+import PageSEO, { buildLocalBusinessSchema } from '../components/PageSEO';
+
+const schema = buildLocalBusinessSchema({ path: '/contact' });
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -49,6 +51,7 @@ export default function Contact() {
         title="Contact Ozark Elite Roofing | Free Roof Estimate Springfield, MO"
         description="Request a free roof inspection and estimate from Ozark Elite Roofing. Call 417-444-3808 or send us a message — serving Purdy and Springfield, MO."
         path="/contact"
+        schema={schema}
         image="/contact-hero.jpg"
       />
 

@@ -1,6 +1,8 @@
 import { Shield, Award, DollarSign } from 'lucide-react';
 import { motion } from 'motion/react';
-import PageSEO from '../components/PageSEO';
+import PageSEO, { buildLocalBusinessSchema } from '../components/PageSEO';
+
+const schema = buildLocalBusinessSchema({ path: '/about' });
 
 const tileContainer = {
   hidden: { opacity: 0 },
@@ -45,6 +47,7 @@ export default function About() {
         title="About Ozark Elite Roofing | Springfield, MO Roof Restoration"
         description="Ozark Elite Roofing is a Purdy, MO-based commercial roofing contractor serving Springfield and the surrounding 60-mile radius with honest pricing and top-notch service."
         path="/about"
+        schema={schema}
         image="/Copy of DJI_0067.JPG"
       />
 
